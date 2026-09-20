@@ -1,0 +1,68 @@
+BITÁCORA DEL PROYECTO
+
+Equipo: Risk Analysts
+Alumno: Hernández Martínez Ricardo
+Proyecto: Análisis de factores de éxito comercial en la industria de videojuegos
+Semestre: 2026-2
+
+==================================================
+AVANCE 1: PROBLEMA, DATOS Y PLAN ANALÍTICO
+==================================================
+
+Fecha: 10/09/2026
+Tarea: Selección del tema y búsqueda de datasets en Kaggle
+Responsable: Hernández Martínez Ricardo
+Evidencia producida: Dataset Video Game Sales y fuente alternativa identificados
+Estado: Completado
+
+Fecha: 11/09/2026
+Tarea: Definición del problema, decisión y pregunta de negocio
+Responsable: Hernández Martínez Ricardo
+Evidencia producida: Secciones 3.2 y 3.3 del documento
+Estado: Completado
+
+Fecha: 12/09/2026
+Tarea: Evaluación y comparación de fuentes
+Responsable: Hernández Martínez Ricardo
+Evidencia producida: Sección 3.5 y diccionario de datos
+Estado: Completado
+
+Fecha: 13/09/2026
+Tarea: Primera lectura de los datos crudos
+Responsable: Hernández Martínez Ricardo
+Evidencia producida: Sección 3.6 con inventario de archivos y columnas
+Estado: Completado
+
+Fecha: 14/09/2026
+Tarea: Plan analítico, arquitectura y riesgos
+Responsable: Hernández Martínez Ricardo
+Evidencia producida: Secciones 3.7, 3.8 y 3.9
+Estado: Completado
+
+Fecha: 15/09/2026
+Tarea: Redacción final del documento y presentación
+Responsable: Hernández Martínez Ricardo
+Evidencia producida: avance01.pdf y presentacion_avance01.pdf
+Estado: Completado
+
+Fecha: 15/09/2026
+Tarea: Creación y organización del repositorio
+Responsable: Hernández Martínez Ricardo
+Evidencia producida: Repositorio en GitHub compartido con lirc2911
+Estado: Completado
+
+==================================================
+RETROALIMENTACIÓN
+==================================================
+
+Observación: Pendiente de recibir
+Acción aplicada: Por recibir
+Fecha: —
+
+==================================================
+NOTAS
+==================================================
+
+- El avance se desarrolló de forma individual.
+- El repositorio se compartió con la profesora mediante invitación al usuario lirc2911.
+- Los datasets crudos se conservaron sin modificaciones en data/raw/ según las especificaciones de la actividad.
