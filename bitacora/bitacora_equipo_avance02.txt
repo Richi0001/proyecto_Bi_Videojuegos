@@ -1,0 +1,105 @@
+BITÁCORA DEL EQUIPO RISK ANALYSTS
+Semestre 2026-2
+Alumno: Hernández Martínez Ricardo
+Proyecto: Optimización del desempeño comercial en la industria de videojuegos
+Repositorio: https://github.com/Richi0001/proyecto_Bi_Videojuegos
+
+Esta bitácora registra el trabajo que he hecho a lo largo del semestre en el
+proyecto de Inteligencia de Negocios. El equipo Risk Analysts quedó conformado
+solo por mí (Hernández Martínez Ricardo).
+
+REGISTRO DE ACTIVIDADES
+
+10/08/2026 — Elección del tema
+Empecé el semestre definiendo el tema del proyecto. Después de revisar varias
+opciones me quedé con la industria de videojuegos porque me interesa y porque
+el dataset de Kaggle tiene buena estructura. Dejé el README inicial con la
+idea general.
+
+15/09/2026 — Avance 1
+Armé el Avance 1 completo: problema organizacional, pregunta de negocio,
+evaluación de las dos fuentes (vgsales.csv y videoGameSalesWithRatings.csv),
+primera lectura del dataset, plan analítico y arquitectura de la cadena BI.
+Lo entregué como docs/avance01.pdf y presentacion/avance01.pdf.
+
+15/09/2026 — Carga de datasets
+Subí los dos CSV a data/raw/ del repositorio. Ambos son de licencia CC0 y
+pesan poco, así que se pueden compartir sin problema. No los he modificado
+desde entonces.
+
+16/09/2026 — Notebook de inspección inicial
+Hice un primer notebook para explorar el dataset: lectura, formas, tipos,
+faltantes, duplicados, valores únicos y estadísticas descriptivas. Sirvió
+para entender qué había antes de empezar a limpiar. Está en
+notebooks/inspeccion_videojuegos.ipynb.
+
+16/10/2026 — Avance 2
+Este fue el trabajo más grande del bloque. Armé el notebook completo del
+Avance 2 con lectura reproducible, perfil inicial de las 11 columnas,
+hallazgos, reglas de preparación, conversión de Year a Int64, creación del
+subconjunto analítico y validaciones. Está en
+notebooks/idn_avance02_Hernandez_Martinez_Ricardo.ipynb.
+
+16/10/2026 — Informe del Avance 2
+Redacté el informe en PDF con todos los apartados que pedía la guía: contrato
+de lectura, perfil, hallazgos, reglas, comparación antes/después, validación
+y conclusiones. Quedó en docs/avance02_informe.pdf.
+
+16/10/2026 — Ajustes por retroalimentación del Avance 1
+La profesora me hizo varias observaciones sobre el Avance 1. Las más
+importantes fueron: revisar hasta qué año llegaban realmente los datos,
+ajustar el lenguaje para no afirmar predicción de éxito, y aclarar qué
+significa "éxito comercial" en el contexto de la fuente. Apliqué esos
+cambios en el README, el informe y el notebook. Los detalles están más
+abajo.
+
+16/10/2026 — Presentación del Avance 2
+Armé las 6 diapositivas para la exposición: portada, continuidad, lectura,
+perfil, preparación/validación y límites. Se guardó como
+presentacion/avance02_presentacion.pdf.
+
+17/10/2026 — Revisión final
+Estoy dando una última pasada a todo antes de subirlo. Prefiero revisar dos
+veces que subir algo con errores.
+
+18/10/2026 — Subida a GitHub y entrega
+Pendiente. Subiré todo después de la revisión final y entregaré el enlace
+en Classroom al último.
+
+LO QUE ME PIDIÓ LA PROFESORA Y CÓMO LO RESOLVÍ
+
+Cuando entregué el Avance 1, la profesora me hizo tres observaciones que
+apliqué en el Avance 2:
+
+1) Revisar hasta qué año llegan realmente los datos, por lo que ejecuté un conteo de juegos por año y me di cuenta de que, aunque el dataset cubre hasta 2020, en realidad después de 2016 casi no hay registros por lo que la cobertura real es 1980-2016. Los registros atípicos los dejamos en el dataset, pero los he documentado como casos atípicos (representan la industria en esos años).
+
+2) No afirmar que el proyecto permite predecir el éxito ni maximizar ganancias, en este caso modifique reformulando la pregunta de negocio de: "para orientar
+   la selección de género, plataforma y región de un nuevo videojuego", lo
+   cual implicaba predicción." a -> "qué patrones de distribución pueden
+   servir de referencia para la toma de decisiones de inversión en nuevos
+   proyectos de videojuegos". Es un cambio pequeño pero importante, porque
+   los datos son históricos y no permiten predecir nada.
+
+3) Aclarar qué significa "éxito comercial", para ello reemplacé "éxito comercial" por "desempeño comercial" y algunos sinónimos, y aclaré entre paréntesis que se mide con ventas en copias, no con ingresos o costos (porque el dataset no tiene esa información). 
+
+También ajusté otros términos como: "ROI" y "rentabilidad" los mantuve pero ya no como resultados garantizados, sino como decisiones que la información del análisis puede apoyar.
+
+SOBRE LOS DATOS
+
+Los dos CSV están en data/raw/ desde septiembre. Son de licencia Pública, así
+que no hay problema con compartirlos. No los he modificado en ningún momento segun las indicaciones; todo el trabajo de limpieza y transformación se hizo sobre copias en memoria en los notebooks.
+
+vgsales.csv → 16,598 filas × 11 columnas
+videoGameSalesWithRatings.csv → 16,719 filas × 16 columnas
+
+EN QUÉ VOY?
+
+Avance 1 → listo
+Avance 2 → listo
+
+NOTAS SUELTAS:
+
+- El repositorio está compartido con la profesora (lirc2911). Una invitación
+  expiró, hay que reenviarla si lo solicita.
+  
+- Voy a revisar todo antes de subirlo; por eso la subida quedó para el 19 de Octubre y por ende la entrega en Classroom la haré al final, después de cargar todo en GitHub
