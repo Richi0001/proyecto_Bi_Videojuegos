@@ -1,0 +1,14 @@
+fecha,archivo,paso,filas_antes,filas_despues,regla,resultado,observaciones,responsable
+2026-11-07T08:07:12.440124+00:00,vgsales.csv,leer,16598,16598,Verificar 11 columnas esperadas,Correcto,Entrada conservada sin modificaciones,Ricardo
+2026-11-07T08:11:34.269381+00:00,vgsales.csv,retirar_repetidas,16598,16598,Eliminar duplicados exactos,Correcto,0 filas retiradas,Ricardo
+2026-11-07T08:11:34.289968+00:00,vgsales.csv,normalizar,16598,16598,Year a Int64; texto con strip,Correcto,Year dtype: Int64,Ricardo
+2026-11-07T08:12:55.447481+00:00,vgsales.csv,revisar,16598,16598,Aplicar 7 reglas de calidad (5 bloqueantes + 2 reportables),Con observaciones,Year nulos: 271; Publisher nulos: 58,Ricardo
+2026-11-07T08:14:43.941970+00:00,vgsales.csv,separar,16598,16598,"5 reglas bloqueantes (Rank, Name, Platform, Genre, Global_Sales)",Correcto,"Pendientes: 0; observaciones: 271 sin Year, 58 sin Publisher",Ricardo
+2026-11-07T08:14:46.562101+00:00,vgsales.csv,preparar,16598,16598,Agregar columna derivada 'decada' y ordenar por Rank,Correcto,"Columnas finales: ['Rank', 'Name', 'Platform', 'Year', 'Genre', 'Publisher', 'NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales', 'Global_Sales', 'decada']",Ricardo
+2026-11-07T08:14:51.782198+00:00,vgsales.csv,preparar,16598,16598,Agregar columna derivada 'decada' y ordenar por Rank,Correcto,"Columnas finales: ['Rank', 'Name', 'Platform', 'Year', 'Genre', 'Publisher', 'NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales', 'Global_Sales', 'decada']",Ricardo
+2026-11-07T08:35:10.363216+00:00,vgsales.csv,analisis_estadistico,16598,16598,Calcular 5 medidas descriptivas sobre datos preparados,Correcto,"Media/mediana por género, desv. std por plataforma, frecuencias, percentiles, correlación NA-EU",Ricardo
+2026-11-07T08:36:53.451830+00:00,vgsales.csv,analisis_estadistico,16598,16598,Calcular 5 medidas descriptivas sobre datos preparados,Correcto,"Media/mediana por género, desv. std por plataforma, frecuencias, percentiles, correlación NA-EU",Ricardo
+2026-11-07T08:37:17.685287+00:00,vgsales.csv,analisis_estadistico,16598,16598,Calcular 5 medidas descriptivas sobre datos preparados,Correcto,"Media/mediana por género, desv. std por plataforma, frecuencias, percentiles, correlación NA-EU",Ricardo
+2026-11-07T08:38:22.030871+00:00,vgsales.csv,conciliar,16598,16598,N_crudos = N_repetidas + N_válidos + N_pendientes,Correcto,16598 = 0 + 16598 + 0,Ricardo
+2026-11-07T08:38:30.787258+00:00,vgsales.csv,conciliar,16598,16598,N_crudos = N_repetidas + N_válidos + N_pendientes,Correcto,16598 = 0 + 16598 + 0,Ricardo
+2026-11-07T08:38:55.347985+00:00,vgsales.csv,guardar,16598,16598,"Exportar listos.csv, pendientes.csv y controles.csv",Correcto,Carpeta: 20261107_083855,Ricardo

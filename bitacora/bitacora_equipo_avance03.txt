@@ -1,0 +1,160 @@
+BITÁCORA DEL EQUIPO RISK ANALYSTS
+Semestre 2026-2
+Alumno: Hernández Martínez Ricardo
+Proyecto: Optimización del desempeño comercial en la industria de videojuegos
+Repositorio: https://github.com/Richi0001/proyecto_Bi_Videojuegos
+
+
+Esta es la tercera bitácora del equipo.
+- La primera cubrió el Avance 1.
+- La segunda cubrió el Avance 2.
+- Esta cubre el Avance 3. 
+
+Las mantengo separadas para que se pueda ver la evolución del proyecto sin mezclar etapas. El equipo Risk Analysts soy solo yo (Hernández Martínez Ricardo), así que todas las tareas las realicé yo.
+
+El Avance 3 fue el más técnico de todos, ya que armé un ETL reproducible con funciones, bitácora automática y análisis estadístico. Es el avance que más me costó porque tuve que pensar en funciones, en el contrato de entrada y salida, en la conciliación de conteos y en la reproducibilidad.
+
+=========================================
+REGISTRO DE ACTIVIDADES DEL AVANCE 3
+=========================================
+
+02/11/2026 — Lectura de la guía del Avance 3
+Leí la guía completa, se nos pide integrar, analizar y preparar los datos mediante
+un ETL reproducible, con bitácora automática y análisis estadístico. Cubre
+las notas que fueron agregadas por la profesora: 
+
+- 09 (integración) del 17/10/2026
+- 10 (estadística descriptiva) del 19 y 21/10/2026.
+- 11 (ETL) del 29/10/2026. 
+
+Entendí que no debo forzar cruces si el proyecto usa una sola fuente.
+
+04/11/2026 — Diseño del ETL
+Pensé la estructura del notebook y decidí usar funciones separadas: 
+
+- extraer
+- normalizar
+- revisar
+- preparar 
+
+Y una función anotar() adaptada de la Nota 11 con los campos extra que pide la guía:
+
+- responsable
+- regla
+- resultado
+- observaciones
+
+04/11/2026 y 05/11/2026 — Construí el notebook completo, traté de dividirlo de la siguiente manera:
+
+- Portada y continuidad con avances anteriores.
+- Contrato del ETL.
+- Función extraer() con verificación de columnas.
+- Función anotar() para bitácora automática.
+- Función normalizar() (Year a Int64, texto con strip).
+- Función revisar() con 7 reglas (5 bloqueantes + 2 reportables).
+- Separación de válidos y pendientes.
+- Función preparar() con columna derivada 'decada'.
+- 5 medidas estadísticas: media/mediana por género, desviación por
+  plataforma, frecuencias de género, percentiles de ventas y correlación
+  Pearson entre NA_Sales y EU_Sales.
+- Conciliación de conteos: 16,598 = 0 + 16,598 + 0.
+- Guardado de 3 CSV + bitacora.csv en data/processed/.
+- Verificación del contrato de salida (columnas, tipos, rangos,
+  categorías, clave única).
+- Prueba de reproducibilidad (ejecutar dos veces y comparar).
+- Limitaciones y final/conclusión.
+
+07/11/2026 — Análisis estadístico
+Calculé las 5 medidas sobre los 16,598 registros preparados. Los hallazgos
+principales:
+- El género más frecuente (Action, 19.98%) no es el de mayor media (Platform,
+  0.94 M).
+- La distribución de ventas está muy concentrada: mediana 0.17 M, p99 5.43 M.
+- Wii es la plataforma más dispersa en sus datos (desv. std 3.14), PSP la más homogénea (0.52).
+- Correlación Pearson entre NA y EU: r = 0.7677 (fuerte, pero no es causal).
+
+08/11/2026 — Informe del Avance 3
+Redacté el informe en PDF con todos los apartados pedidos en este avance: 
+- continuidad
+- Contrato ETL
+- Justificación de una sola fuente
+- Transformaciones, validación, conciliación, análisis estadístico, bitácora, salidas, limitaciones y
+conclusiones. 
+
+Lo guardé en docs/avance03_informe.pdf.
+
+08/11/2026 — Presentación del Avance 3
+Salieron un total de 8  diapositivas, las guardé en la ruta presentacion/avance03_presentacion.pdf.
+
+08/11/2026 — README y bitácora
+Actualicé el README con la nueva estructura del repositorio (agregué
+data/processed/ y el notebook del Avance 3). Creé esta bitácora del
+Avance 3.
+
+[PENDIENTE] - Revisión final y subida a GitHub
+Daré una última revisión al informe el Domingo 8 de noviembre, después subiré
+todo a GitHub y entregaré en Classroom para completar la rúbrica.
+
+===========================================
+AJUSTES HECHOS PARA LA RETROALIMENTACIÓN
+===========================================
+
+En el Avance 1 la profesora me pidió revisar la cobertura real y no afirmar que se hace
+predicción de éxito. Esos ajustes los apliqué en el Avance 2 y los mantuve
+en el Avance 3:
+
+1) Cobertura real verificada: 1980-2016 (atípicos en 2017 y 2020, sin
+   registros en 2018-2019).
+2) Lenguaje ajustado: "desempeño comercial" en lugar de "éxito comercial".
+3) Pregunta reformulada hacia patrones históricos, no hacia la predicción.
+
+=======================
+ESTRUCTURA DEL ETL
+=======================
+
+El proceso tiene 6 etapas:
+
+1. Extraer: leer vgsales.csv y verificar las 11 columnas esperadas.
+2. Retirar repetidas: drop_duplicates() (en este dataset no retira nada,
+   porque ya está limpio).
+3. Normalizar: Year a Int64; texto con strip.
+4. Revisar: 7 reglas de calidad por fila.
+5. Separar: válidos vs. pendientes según las 5 reglas bloqueantes.
+6. Preparar: agregar columna 'decada' y ordenar por Rank.
+7. Guardar: exportar listos.csv, pendientes.csv, controles.csv y
+   bitacora.csv
+
+La bitácora registra 9 pasos (el paso de análisis estadístico se cuenta
+una sola vez después de reiniciar el kernel en Google Colab).
+
+=============
+RESULTADOS
+=============
+
+Datos preparados:
+- Filas: 16,598
+- Columnas: 12 (11 originales + decada)
+- Válidos: 16,598 (100%)
+- Pendientes: 0
+- Conciliación: 16,598 = 0 + 16,598 + 0
+
+Medidas estadísticas:
+- Media de ventas por género: Platform 0.94 M (la más alta).
+- Desviación por plataforma: Wii 3.14 (la más alta).
+- Frecuencia de género: Action 19.98% (el más frecuente).
+- Mediana de ventas: 0.17 M.
+- Correlación NA-EU: r = 0.7677.
+
+Reproducibilidad: ejecuté el proceso dos veces y las dos salidas de
+'listos' son idénticas (mismas filas, columnas y valores).
+
+============================
+LIMITACIONES QUE UBICAMOS
+============================
+
+- 271 registros sin Year (1.63%) y 58 sin Publisher (0.35%), conservados
+  sin modificarlos, porque no hay regla para ello.
+- Cobertura real hasta 2016, no hasta 2020 (concentración de datos/dispersión).
+- No hay datos de costos ni ingresos:No se muestran ganancias.
+- Los datos son históricos: no predicen el éxito de un juego futuro.
+- Correlación no es causalidad: r = 0.7677 describe asociación, no causa.
